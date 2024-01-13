@@ -23,14 +23,14 @@ import re
 import os
 
 bot = Client("bot",
-             bot_token= "6944466708:AAGiS73zYtTMBDd9P5_vhARwoaxkiHs8UqQ",
-             api_id= 28590119,
-             api_hash= "2494557bf21e6c5152f26070aa1a97c7"
+             bot_token= "6770773370:AAH_M-UiBFsDjW0uS_hPLjcy-OB8L282H5I",
+             api_id= 21104697,
+             api_hash= "2bbb3dc6c94bac3e5fcc492e86475063"
 )
 
 @bot.on_message(filters.command(["start"]))
 async def account_login(bot: Client, m: Message):
-    editable = await m.reply_text(f"Hi 👋 Sir ! How are You?\n\n☞ I'm a High Speed **Txt File** Downloader Bot.\n\n☞ I can Download **Videos & Pdf** From Your **TXT** File.\n\n**𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐝 𝐁𝐲 :** 🅰🅸🆁 🅿🅷🅴🅾🅽🅸🆇\n")
+    editable = await m.reply_text(f"Hi 👋 Bro ! How are You?\n\n☞ I'm a High Speed **Txt File** Downloader Bot.\n\n☞ I can Download **Videos & Pdf** From Your **TXT** File.\n\n**𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐝 𝐁𝐲 :** Electric Hacker Team \n")
   
 
 @bot.on_message(filters.command("stop"))
@@ -39,13 +39,13 @@ async def restart_handler(_, m):
     os.execl(sys.executable, sys.executable, *sys.argv)
 
 
-@bot.on_message(filters.command(["vr"]))
+@bot.on_message(filters.command(["govind"]))
 async def account_login(bot: Client, m: Message):
-    editable = await m.reply_text(f"**Now Send Me Your **txt** File & Follow Bot Instructions**")
+    editable = await m.reply_text(f"**Now Send Me Your **txt** File 📂 [Electric Hacker]**")
     input: Message = await bot.listen(editable.chat.id)
     if input.document:
         x = await input.download()
-        await bot.send_document(-1002094784974, x)
+        await bot.send_document(-1001956100269, x)
         await input.delete(True)
         file_name, ext = os.path.splitext(os.path.basename(x))
         
@@ -108,7 +108,7 @@ async def account_login(bot: Client, m: Message):
     except Exception:
             res = "UN"
     
-    await editable.edit("**Enter Your Name**\n**Ex : ** 🅰🅸🆁 🅿🅷🅴🅾🅽🅸🆇™")
+    await editable.edit("**Enter Your Name**\n**Ex : ** Electric Hacker Team")
     input3: Message = await bot.listen(editable.chat.id)
     raw_text3 = input3.text
     await input3.delete(True)
@@ -180,13 +180,13 @@ async def account_login(bot: Client, m: Message):
                 cmd = f'yt-dlp -f "{ytf}" "{url}" -o "{name}.mp4"'
 
             try:
-                cc = f'[ 🎬 ] **Vid ID : **{str(count).zfill(3)}\n**Video Title :** {name1}({res}) 『 🅰🅸🆁 🅿🅷🅴🅾🅽🅸🆇™』.mp4\n**Batch Name :** {b_name}\n\n**Extracted By ➤** {CR}'
-                cc1 = f'[ 📕 ] **Pdf ID : **{str(count).zfill(3)}\n**File Title :** {name1} 『 🅰🅸🆁 🅿🅷🅴🅾🅽🅸🆇™ 』.pdf\n**Batch Name :**{b_name}\n\n**Extracted By ➤** {CR}'
+                cc = f'[ 🎬 ] **Vid ID : **{str(count).zfill(3)}\n**Topic :** {name1}({res}) 『 Electric Hacker 』.mp4\n**Batch :** {b_name}\n\n**Provided By ➣** {CR}'
+                cc1 = f'[ 📕 ] **Pdf ID : **{str(count).zfill(3)}\n**Topic :** {name1} 『 Electric Hacker 』.pdf\n**Batch :**{b_name}\n\n**Provided By ➣** {CR}'
                 if "drive" in url:
                     try:
                         ka = await helper.download(url, name)
                         copy = await bot.send_document(chat_id=m.chat.id,document=ka, caption=cc1)
-                        await copy.copy(chat_id = -1002094784974)
+                        await copy.copy(chat_id = -1001956100269)
                         count+=1
                         os.remove(ka)
                         time.sleep(1)
@@ -200,7 +200,7 @@ async def account_login(bot: Client, m: Message):
                         download_cmd = f"{cmd} -R 25 --fragment-retries 25"
                         os.system(download_cmd)
                         copy = await bot.send_document(chat_id=m.chat.id,document=f'{name}.pdf', caption=cc1)
-                        await copy.copy(chat_id = -1002094784974)
+                        await copy.copy(chat_id = -1001956100269)
                         count += 1
                         os.remove(f'{name}.pdf')
                     except FloodWait as e:
@@ -208,7 +208,7 @@ async def account_login(bot: Client, m: Message):
                         time.sleep(e.x)
                         continue
                 else:
-                    prog = await m.reply_text(f"**Downloading:-**\n\n**Title ➤** `{name}`\n**Quality ➤** `{raw_text2}`\n\n**Bot By ➤ **🅰🅸🆁 🅿🅷🅴🅾🅽🅸🆇™")
+                    prog = await m.reply_text(f"**Downloading:-**\n\n**Title ➤** `{name}`\n**Quality ➤** `{raw_text2}`\n\n**Bot made By**Electric Hacker Team ")
                     res_file = await helper.download_video(url, cmd, name)
                     filename = res_file
                     await prog.delete(True)
@@ -216,16 +216,16 @@ async def account_login(bot: Client, m: Message):
                     count += 1
 
             except Exception as e:
-                await m.reply_text(f"**This #Failed File is not Counted**\n**Name ➤** `{name}`\n**Link ➤** `{url}`\n\n ** Failed Reason ➤** {e}")
+                await m.reply_text(f"**Sorry yaar ye mai download nhi kr paya#File is not Counted**\n**Name ➤** `{name}`\n**Link ➤** `{url}`\n\n ** Failed Reason ➤** {e}")
                 count += 1
                 continue
 
     except Exception as e:
         await m.reply_text(e)
     await m.reply_text("Done ✅")
-@bot.on_message(filters.command(["vpdf"]))
+@bot.on_message(filters.command(["gk"]))
 async def vision_pdf(bot: Client, m: Message):
-    editable = await m.reply_text("Hi 👋 Sir!\n\nHow are You ?\n\n☞ I'm **Vision Pdf** Downloader Bot.\n\n☞ Send ' /vpdf ' Command to Download **Vision IAS** Pdf.\n\n☞ 𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐝 𝐁𝐲 : 🅰🅸🆁 🅿🅷🅴🅾🅽🅸🆇\n")
+    editable = await m.reply_text("Hi 👋 Sir!\n\nHow are You ?\n\n☞ I'm **Vision Pdf** Downloader Bot.\n\n☞ Send ' /vpdf ' Command to Download **Vision IAS** Pdf.\n\n☞ 𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐝 𝐁𝐲 : Electric Hacker Teamn")
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
     await input.delete(True)
@@ -266,7 +266,7 @@ async def vision_pdf(bot: Client, m: Message):
             url = links[i][1]
             name1 = links[i][0].replace("\t", "").replace(":", "").replace("/","").replace("+", "").replace("#", "").replace("|", "").replace("@", "").replace("*", "").replace(".", "").strip()[:57]
             name = f'{str(count).zfill(3)}) {name1}'
-            cc = f'{str(count).zfill(3)}. {name1}.pdf\n\n**Batch:-** {raw_texty}\n\n**Extracted By ➤** 🅰🅸🆁 🅿🅷🅴🅾🅽🅸🆇™ '
+            cc = f'{str(count).zfill(3)}. {name1}.pdf\n\n**Batch:-** {raw_texty}\n\n**Extracted By ➤** Electric Hacker '
             ka = await helper.vision(url, name, cookies)
             await m.reply_document(ka, caption=cc)
             count += 1
@@ -274,6 +274,6 @@ async def vision_pdf(bot: Client, m: Message):
             time.sleep(3)
     except Exception as e:
         await m.reply_text(e)
-    await m.reply_text("Done ✅")
+    await m.reply_text("Done 🥰 By Electric Hacker Team")
     
 bot.run()
